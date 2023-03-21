@@ -1,0 +1,24 @@
+%%[
+set @reservationStatus = Lookup("Reservations", "Status", "EmailAddress", emailaddr)
+
+
+if @reservationStatus == "Reserved" then
+  set @CTA = "Order Now"
+else
+  set @CTA = "Reserve Now"
+endif
+]%%
+
+-----------------------------------------------------------------
+
+Dear %%=v(@firstName)=%%,
+
+We are thrilled to introduce you to the Fisker Ocean – the world's most sustainable and luxurious electric SUV. 
+With its breathtaking design, impressive range, and cutting-edge features, the Fisker Ocean is the ultimate driving experience.
+
+To %%=v(@cta)=%%, simply click the button below.
+
+<button>%%=v(@cta)=%%</button>
+
+Thank you!!
+All-Electric.Dynamic.Driver-Centric.
